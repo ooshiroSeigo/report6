@@ -1,4 +1,4 @@
-package jp.ac.uryukyu.ie.e225761;
+import jp.ac.uryukyu.ie.e225761.*;
 public class main {
     public static void main(String[] args) throws Exception {
         student oosiro = new student("oosiro", "61");
