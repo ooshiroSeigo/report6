@@ -6,6 +6,7 @@ public class student {
     private String name;
     private String number;
     private int absence = 0;
+    private boolean absenceADay = false;
     /**
      * コンストラクタ：名前と学籍番号を定義
      * @param name　生徒の名前
@@ -43,4 +44,11 @@ public class student {
     public int getAbsence(){
         return this.absence;
     }
+    public boolean getAbsenceADay(){
+        return this.absenceADay;
+    }
+    public void setAbsenceADay(boolean absenceADay){
+        this.absenceADay = absenceADay;
+    }
+    
 }

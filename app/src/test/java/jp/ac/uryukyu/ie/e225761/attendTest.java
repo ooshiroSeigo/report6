@@ -7,9 +7,9 @@ public class attendTest {
     @Test void testAddAbsence() {
         student demoStudent = new student("oosiro", "61");
         System.out.println(demoStudent.getName());
-
-        attend teacher = new attend();
-        teacher.addAbsence(demoStudent);
+        student[] demo = {demoStudent};
+        attend teacher = new attend(demo);
+        teacher.addAbsence();
         System.out.println(demoStudent.getAbsence());        
         assertEquals(1, demoStudent.getAbsence());
 }
