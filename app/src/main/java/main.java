@@ -11,12 +11,11 @@ public class main {
         //teacher.addAbsence();
         //System.out.println(oosiro.getAbsence());
         
-        student[] studentlist = {oosiro,satou,yamada};
         //以下の三行はatendanceのテスト
         System.out.println(oosiro.getAbsenceADay());
         //teacher.atendance();
         System.out.println(oosiro.getAbsenceADay());
-        for (int i = 0; i < 5 ;i++){
+        for (int i = 0; i < 5 ;i++){//i < __ の部分には授業回数を入れる
             teacher.clearabsence();
             teacher.atendance();
             teacher.addAbsence();

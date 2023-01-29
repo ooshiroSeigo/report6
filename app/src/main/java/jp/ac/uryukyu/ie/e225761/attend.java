@@ -15,17 +15,20 @@ public class attend {
     }
     /**
      * studentクラスのabsenceに+1するメソッド
-     * @param absencStudent　欠席・遅刻した生徒
+     * @param name
      */
     public void addAbsence(){
         for (student st : this.allstudent){
-            if (st.getAbsenceADay() == false){
+            if (st.getAbsenceADay() == false){ //出席したかどうかをbooleanで表す
                 st.setAbsence(st.getAbsence() + 1);
                 judgeF(st);
             }
         }
     }
-
+    /**
+     * 時間内(出席と扱われる時間)に出席したらstudent型のインスタンスのabsenceADayをtrueにする
+     * 時間外だと出席にならない旨をメッセージするメソッド。
+     */
     public void atendance(){
         Scanner scanner = new Scanner(System.in);
         long timelimit = System.currentTimeMillis() + (10 * 1000);
@@ -41,11 +44,18 @@ public class attend {
             this.studentdict.get(atendnum).setAbsenceADay(true);
         }
     }
+    /**
+     * 授業の出席確認が終わった時に全員のabsenceADayを初期値のfalseに戻すメソッド。
+     */
     public void clearabsence(){
         for (int i = 0;i < this.allstudent.length;i++ ){
             this.allstudent[i].setAbsenceADay(false);
         }
     }
+    /**
+     * 5回欠席している人のために、この授業が不可になったと伝えるメソッド。
+     * @param judgeedStudent ここに出席をとるタイムリミットに間に合わなかった生徒のインスタンスが入る
+     */
     public void judgeF(student judgeedStudent){
         if (judgeedStudent.getAbsence() >= 5){
             System.out.println("5回以上欠席・遅刻したのでこの授業は不可になりました。");
